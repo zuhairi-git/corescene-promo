@@ -58,7 +58,7 @@ export default function HeroSection() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
           >
-            Supercharge your workflow with CoreScene's{' '}
+            Supercharge your workflow with CoreScene&apos;s{' '}
             <span className="text-blue-400 font-semibold">unified AI suite</span>.
             <br />
             Seamlessly integrated tools for design, content, and marketing teams.
@@ -98,7 +98,7 @@ export default function HeroSection() {
             { name: 'Figma', icon: Target },
             { name: 'WordPress', icon: Zap },
             { name: 'HubSpot', icon: RotateCcw }
-          ].map((platform, index) => {
+          ].map((platform) => {
             const IconComponent = platform.icon;
             return (
               <div key={platform.name} className="flex items-center space-x-3 group cursor-pointer">
