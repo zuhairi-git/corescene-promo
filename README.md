@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoreScene Product Page
+
+A modern, responsive promotional + product showcase page built with Next.js 15 and Tailwind CSS.
+
+## Features
+
+- **Hero Section**: Bold brand statement with clear value proposition
+- **Product Showcase**: Modular grid layout displaying all AI tools
+- **Why CoreScene Section**: Ecosystem-level benefits and audience targeting
+- **Call to Action**: Strong bottom-of-page conversion elements
+- **Dark Mode Support**: Automatic dark/light theme switching
+- **Mobile Responsive**: Optimized for all device sizes
+
+## Project Structure
+
+```
+src/app/
+├── components/
+│   ├── Navigation.tsx          # Top navigation bar
+│   ├── HeroSection.tsx         # Hero/brand statement section
+│   ├── ProductShowcase.tsx     # Product grid and cards
+│   ├── WhyCoreSceneSection.tsx # Benefits and audience section
+│   └── CallToActionSection.tsx # Bottom CTA section
+├── data/
+│   └── products.ts            # Product configuration and data
+├── globals.css               # Global styles
+├── layout.tsx               # Root layout
+└── page.tsx                 # Main page component
+```
+
+## Product Management
+
+### Adding New Products
+
+Edit `src/app/data/products.ts` to add new products:
+
+```typescript
+{
+  id: 'new-product',
+  name: 'AI Plugin for Platform',
+  tagline: 'Your compelling tagline',
+  description: 'One-liner benefit description',
+  status: 'available' | 'coming-soon',
+  visible: true,
+  actionText: 'Try Now',
+  actionUrl: '#link',
+  platform: 'Platform Name'
+}
+```
+
+### Controlling Product Visibility
+
+Toggle product visibility without removing the configuration:
+
+```typescript
+visible: false  // Hide the product
+visible: true   // Show the product
+```
+
+### Product Status
+
+- `available`: Shows green badge and active "Try Now" button
+- `coming-soon`: Shows yellow badge and disabled "Coming Soon" button
 
 ## Getting Started
 
-First, run the development server:
-
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+### Brand Colors
+The primary brand color (blue) can be customized in the Tailwind CSS classes throughout the components.
 
-To learn more about Next.js, take a look at the following resources:
+### Content Updates
+- **Hero messaging**: Edit `HeroSection.tsx`
+- **Benefits**: Modify the benefits array in `WhyCoreSceneSection.tsx`
+- **CTAs**: Update button text and actions in `CallToActionSection.tsx`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Styling
+The project uses Tailwind CSS with automatic dark mode support. Styles are applied using utility classes throughout the components.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build and Deployment
 
-## Deploy on Vercel
+```bash
+npm run build
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scalability Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Modular Design**: Each section is a separate component
+- **Configuration-Driven**: Products managed through a simple TypeScript configuration
+- **Visibility Controls**: Easy show/hide without code changes
+- **Responsive Layout**: Automatically adapts to different screen sizes
+- **Performance Optimized**: Built on Next.js 15 with modern React patterns
+
+---
+
+Built with ❤️ using Next.js, React, and Tailwind CSS
